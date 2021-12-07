@@ -3,18 +3,22 @@ package com.bridgelabz.employeewagecompute;
 import java.util.Random;
 public class EmployeeWageComputation {
 	public static void main(String[] args) {
-		// declare constant variable
-		int IS_PRESENT = 1;
-		// create object of random class
+		int IS_FULL_TIME = 1;
+		int WAGE_PER_HOUR = 20;
+		int empHrs = 0;
+		int empWage = 0;
+		
 		Random rd = new Random();
-		// generating number 0 or 1
-		int empcheck =rd.nextInt(2);
-		// applying condition for checking present or absent by using if statement
-		if(empcheck==IS_PRESENT) {
-			System.out.println("Employee is Present");
+		int empCheck = rd.nextInt(2);
+		
+		if(empCheck==IS_FULL_TIME) {
+		    empHrs=8;
+		    System.out.println("Employee is Present");
 		}
 		else {
-			System.out.println("Employee is Absent");
+		    System.out.println("Employee is Absent");
 		}
+		empWage= WAGE_PER_HOUR * empHrs;
+		System.out.println("Daily Wage of Employee is: " + empWage);
 	}
 }
