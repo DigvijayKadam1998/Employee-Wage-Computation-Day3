@@ -2,28 +2,34 @@ package com.bridgelabz.employeewagecompute;
 
 import java.util.Random;
 public class EmployeeWageComputation {
-	public static void main(String[] args) {
-		int IS_FULL_TIME = 1;
-		int IS_PART_TIME = 2;
-		int WAGE_PER_HOUR = 20;
-		int empHrs = 0;
-		int empWage = 0;
-
-		Random rd = new Random();
-		int empCheck = rd.nextInt(3);
-
-		if(empCheck==IS_FULL_TIME) {
-		    empHrs = 8;
-		    System.out.println("Employee is Full Time");
-		}
-		else if(empCheck==IS_PART_TIME) {
-		    empHrs = 4;
-		    System.out.println("Employee is Part Time");
-		}
-		else {
-		    System.out.println("Employee is Absent");
-		}
-		empWage = empHrs * WAGE_PER_HOUR;
-		System.out.println("Daily Wage of Employee is: " + empWage);
-	}
+	public static final int IS_PART_TIME=1;
+    public static final int IS_FULL_TIME=2;
+    public static final int WAGE_PER_HR =20;
+    public static final int NUM_WORKING_DAYS=20;
+    public static void main(String[] args) {
+    	// declare a variables
+    	int empHrs = 0;
+    	int empWage = 0;
+    	int totalEmpWage =0;
+    	// using while loop for calculating wage for 20 days
+    	for (int i = 0; i <= NUM_WORKING_DAYS; i++) {
+    		Random random = new Random();
+    		int empCheck = random.nextInt(3);
+    		switch (empCheck) {
+    		case IS_FULL_TIME:
+    	       	    empHrs = 8;
+    		    break;
+    		case IS_PART_TIME:
+    		    empHrs = 4;
+    		    break;
+    		default:
+    		    empHrs = 0;
+    		    break;
+    		}
+    		empWage = WAGE_PER_HR * empHrs;
+    		totalEmpWage += empWage ;
+    		System.out.println("Daily wage of the employee: " + empWage);
+    	}
+    	System.out.println("Total Employee Wage for a Month is: " + totalEmpWage );
+    }
 }
