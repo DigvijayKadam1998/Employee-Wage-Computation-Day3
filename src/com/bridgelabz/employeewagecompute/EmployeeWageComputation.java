@@ -2,10 +2,10 @@ package com.bridgelabz.employeewagecompute;
 
 import java.util.Random;
 public class EmployeeWageComputation {
+	public static final int IS_PART_TIME=1;
+        public static final int IS_FULL_TIME=2;
+        public static final int WAGE_PER_HR =20;
 	public static void main(String[] args) {
-		int IS_FULL_TIME = 1;
-		int IS_PART_TIME = 2;
-		int WAGE_PER_HOUR = 20;
 		int empHrs = 0;
 		int empWage = 0;
 
